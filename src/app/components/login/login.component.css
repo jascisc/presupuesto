@@ -1,0 +1,54 @@
+.pres-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 80px;
+  }
+  
+  .pres-row {
+    border-radius: 0px;
+    background: #64c9cf;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    text-align: center;
+  }
+  .pres-title{
+    
+    font-family: 'Caveat';
+    font-style: bold;
+    font-weight: 700;
+    font-size: 64px;
+    letter-spacing: 0.25em;  
+    color: #fde49cff;
+  }
+  .pres-google{
+    cursor: pointer;
+    background-color: #ffffff;
+    color: rgb(10, 10, 10);
+    border-radius: 20px;
+  }
+
+  .pres-text{
+    /* color: rgb(5, 4, 3); */
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    border-radius: 20px;
+  }
+  .pres-text-all:hover {
+    background-color: #fde49cff !important;
+    color:#64c9cf !important
+  }
+  
+  
+
+  
+  

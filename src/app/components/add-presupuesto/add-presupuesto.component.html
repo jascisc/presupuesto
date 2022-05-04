@@ -1,0 +1,52 @@
+
+<div *ngIf="bPresupuesto" class="container-flex mt-4 mx-5">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center mt-3">Nuevo presupuesto ({{nombrePresupuesto}})</h1>
+            <div class="row mx-5">
+                <div class="col-6 ">
+                    <!-- <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Presupuesto</span>
+                        <input [(ngModel)]="presupuesto" type="number" class="form-control"
+                            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div> -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Gasto</span>
+                        <input type="text" class="form-control"
+                            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Nuevo elemente" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                      </div>
+                </div> 
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-12">
+                            <p>Presupuesto:{{presupuesto}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="!bPresupuesto" class="container mt-4">
+    <div class="row">
+        <form [formGroup]="formularioNuevo" (ngSubmit)="nuevoPresupuesto()" class="col-12">
+            <h1 class="text-center mt-3">Nuevo presupuesto</h1>
+            <div class="row">
+                <div class="col-12">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Nombre presupuesto</span>
+                        <input type="text" class="form-control" formControlName="nombre">
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="number" class="form-control" placeholder="Presupuesto $" formControlName="presupuesto">
+                        <input class="btn btn-outline-success" type="submit" value="Crear presupuesto">
+                    </div>
+                </div>
+            </div>
+        </form >
+    </div>
+</div>

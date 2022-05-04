@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'presupuesto';
+  logeado=false;
+
+  constructor() {
+    if (localStorage.getItem('user')!=='null') {
+      this.logeado=true;
+    }
+    // console.log(localStorage.getItem('user'));
+   }
 }
