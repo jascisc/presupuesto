@@ -4,3 +4,18 @@
 .container{
     background-color: aliceblue;
 }
+.p-100{
+    color: green;
+}
+.p-75{
+    color: blue;
+}
+.p-50{
+    color: orange;
+}
+.p-25{
+    color: coral;
+}
+.p-0{
+    color: red;
+}

@@ -18,7 +18,7 @@ export class PresupuestoService {
   }
 
   getPresupuestos():Observable<any>{
-    return this.firestore.collection(this.bd).snapshotChanges();
+    return this.firestore.collection(this.bd,ref => ref.orderBy('fecha','desc')).snapshotChanges();
   }
 
 }

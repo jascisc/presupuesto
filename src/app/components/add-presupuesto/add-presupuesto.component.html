@@ -1,30 +1,60 @@
-
 <div *ngIf="bPresupuesto" class="container-flex mt-4 mx-5">
     <div class="row">
         <div class="col-12">
-            <h1 class="text-center mt-3">Nuevo presupuesto ({{nombrePresupuesto}})</h1>
+            <h1 class="text-center mt-3 ">Presupuesto {{nombrePresupuesto}}</h1>
             <div class="row mx-5">
                 <div class="col-6 ">
-                    <!-- <div class="input-group mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Presupuesto</span>
-                        <input [(ngModel)]="presupuesto" type="number" class="form-control"
-                            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                    </div> -->
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Gasto</span>
-                        <input type="text" class="form-control"
-                            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <form [formGroup]="formularioGasto" (ngSubmit)="accionBoton()" class="mt-5">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Gasto</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default" formControlName="gasto">
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" placeholder="Nuevo elemente"
+                                aria-label="Recipient's username" aria-describedby="button-addon2" formControlName="cantidad">
+                                <input class="btn btn-outline-success" type="submit" value="{{botonAccion}}">
+                        </div>
+                    </form>
+                    <div class="row mb-3">
+                        <div class="col-12 text-center">
+                            <button (click)="guardarPresupuesto()" class="btn btn-primary">Guardar Presupuesto</button>
+                        </div>
                     </div>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Nuevo elemente" aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-                      </div>
-                </div> 
+                    
+                </div>
                 <div class="col-6">
                     <div class="row">
-                        <div class="col-12">
-                            <p>Presupuesto:{{presupuesto}}</p>
+                        <div class="col-12 d-flex justify-content-between">
+                            <p class="h3">Presupuesto:{{presupuesto}}</p>
+                            <p class="h3" [ngClass]="{'p-100': porsentajeDisponible <= 100, 'p-75' : porsentajeDisponible <= 75,'p-50' : porsentajeDisponible <= 50, 'p-25' : porsentajeDisponible <= 25 , 'p-0' : porsentajeDisponible <= 0 }">Disponible:{{disponible}}</p>
                         </div>
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">Gasto</th>
+                                <th scope="col">Cantidad $</th>
+                                <th scope="col">Acción</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let gasto of listaGastos;let i=index">
+                                <td>{{gasto.gasto}}</td>
+                                <td  class="text-center">{{gasto.cantidad}}</td>
+                                <td >
+                                    <i (click)="gastoEditar(i)" class="fa-regular fa-pen-to-square"></i>
+                                    <i (click)="eliminarGasto(i)" class="fa-regular fa-trash-can mx-4"></i>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Total</th>
+                                <th scope="row" class="text-center">{{sumaGastos}}</th>
+                                <td >
+                                    <i (click)="eliminarTodo()" class="fa-regular fa-trash-can mx-4"></i>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
                     </div>
                 </div>
             </div>
@@ -42,11 +72,12 @@
                         <input type="text" class="form-control" formControlName="nombre">
                     </div>
                     <div class="input-group mb-3">
-                        <input type="number" class="form-control" placeholder="Presupuesto $" formControlName="presupuesto">
+                        <input type="number" class="form-control" placeholder="Presupuesto $"
+                            formControlName="presupuesto">
                         <input class="btn btn-outline-success" type="submit" value="Crear presupuesto">
                     </div>
                 </div>
             </div>
-        </form >
+        </form>
     </div>
 </div>

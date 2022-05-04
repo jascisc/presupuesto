@@ -1,0 +1,18 @@
+<div class="container-flex mt-4 mx-5">
+    <div class="row">
+        <div class="col-6 offset-3 flex-column d-flex justify-content-center mt-2 ">
+            <div class="presupuesto px-4 mb-2" *ngFor="let presupuesto of listaPresupuestos">
+                <p class="h2">{{presupuesto.nombre}} <span class="h5">{{presupuesto.fecha.toMillis() | date:"EEEE dd 'de' MMMM YYYY"}}</span> </p>
+                <p class="h4">Tu presupuesto fue:${{presupuesto.presupuesto | currency:"MXN"}}</p>
+                <p class="h4">Tus gasto final sumaron:${{presupuesto.suma | currency:"MXN"}}</p>
+                <p class="h5">Tus gastos fueron los siguientes:</p>
+
+                <div class="px-3">
+                    <ol>
+                        <li *ngFor="let gasto of presupuesto.gastos">{{gasto.gasto}} {{gasto.cantidad}}</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

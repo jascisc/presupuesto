@@ -1,0 +1,10 @@
+/* .container-flex{
+    background-color: aliceblue;
+} */
+.container{
+    background-color: aliceblue;
+}
+.presupuesto{
+    background-color: rgb(202, 204, 204);
+    border-radius: 10px;
+}
