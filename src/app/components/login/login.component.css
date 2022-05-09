@@ -21,12 +21,11 @@
     text-align: center;
   }
   .pres-title{
-    
     font-family: 'Caveat';
     font-style: bold;
     font-weight: 700;
     font-size: 64px;
-    letter-spacing: 0.25em;  
+    /* letter-spacing: 0.25em;   */
     color: #fde49cff;
   }
   .pres-google{
@@ -40,7 +39,7 @@
     /* color: rgb(5, 4, 3); */
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
-    font-size: 25px;
+    font-size: 20px;
     border-radius: 20px;
   }
   .pres-text-all:hover {

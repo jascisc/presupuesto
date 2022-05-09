@@ -12,6 +12,7 @@ export class HistorialPresupuestosComponent implements OnInit {
   constructor(private apiPre:PresupuestoService) { }
 
   ngOnInit(): void {
+    this.listaPresupuestos=[]
     this.apiPre.getPresupuestos().subscribe(doc=>{
       // console.log(doc);
       doc.forEach((element:any) => {

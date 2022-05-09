@@ -20,7 +20,7 @@ export class AddPresupuestoComponent implements OnInit {
   sumaGastos: number = 0;
   disponible: number = 0;
   presupuesto: number = 0;
-  bPresupuesto: boolean = false;
+  bPresupuesto: boolean = true;
   nombrePresupuesto: string = "";
   formularioNuevo: FormGroup;
   formularioGasto: FormGroup;

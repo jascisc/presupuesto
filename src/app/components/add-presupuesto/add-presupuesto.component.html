@@ -3,7 +3,7 @@
         <div class="col-12">
             <h1 class="text-center mt-3 ">Presupuesto {{nombrePresupuesto}}</h1>
             <div class="row mx-5">
-                <div class="col-6 ">
+                <div class="col-12 col-lg-6">
                     <form [formGroup]="formularioGasto" (ngSubmit)="accionBoton()" class="mt-5">
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="inputGroup-sizing-default">Gasto</span>
@@ -23,10 +23,13 @@
                     </div>
                     
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-lg-6">
                     <div class="row">
-                        <div class="col-12 d-flex justify-content-between">
+                        <div class="col-12 col-lg-6  d-flex justify-content-center">
                             <p class="h3">Presupuesto:{{presupuesto}}</p>
+                            
+                        </div>
+                        <div class="col-12 col-lg-6 d-flex justify-content-center">
                             <p class="h3" [ngClass]="{'p-100': porsentajeDisponible <= 100, 'p-75' : porsentajeDisponible <= 75,'p-50' : porsentajeDisponible <= 50, 'p-25' : porsentajeDisponible <= 25 , 'p-0' : porsentajeDisponible <= 0 }">Disponible:{{disponible}}</p>
                         </div>
                         <table class="table">
